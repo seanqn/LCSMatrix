@@ -6,10 +6,6 @@
 #include <vector>
 #include <algorithm>
 
-// TODO: Type your code here
-// - Include any required additional headers
-// - Declare any desired classes/structs to be used by LCSMatrix
-
 class LCSMatrix {
 private:
    int rowCount;
@@ -74,7 +70,6 @@ public:
         }
       }
 
-      // 
       // case if LCS doesn't exist
       if (matrix[rowCount - 1][columnCount - 1] == 0) {
         return;
@@ -84,14 +79,10 @@ public:
       Backtrack(rowCount-1, columnCount-1, "", str1, str2);
     }
 
-   // Returns the number of columns in the matrix, which also equals the length
-   // of the second string passed to the constructor.
    int GetColumnCount() {
       return columnCount;
    }
    
-   // Returns the matrix entry at the specified row and column indices, or 0 if
-   // either index is out of bounds.
    int GetEntry(int rowIndex, int columnIndex) {
       if (rowIndex >= 0 && columnIndex >= 0) {
         if (rowIndex <= rowCount && columnIndex <= columnCount) {
@@ -101,14 +92,10 @@ public:
       return 0;
    }
    
-   // Returns the number of rows in the matrix, which also equals the length
-   // of the first string passed to the constructor.
    int GetRowCount() {
       return rowCount;
    }
    
-   // Returns the set of distinct, longest common subsequences between the two
-   // strings that were passed to the constructor.
    std::unordered_set<std::string> GetLongestCommonSubsequences() {
       return LCSSet;
    }
